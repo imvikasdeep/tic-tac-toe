@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,600&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+
+    <div class="container">
+        
+        <div>
+            <h1>Tic Tac Toe</h1>
+        </div>
+
+        <div>
+            <h4 id="currentPlayer" class="active">Player X</h4>
+        </div>
+
+        <div class="gameBoard">
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+            <div class="block available"></div>
+        </div>
+
+
+    </div>
+    
+    <div class="popup-overlay" id="popup">
+        <div class="result-popup">
+            <h3>Congrats!</h3>
+            <h2>You Won</h2>
+            <button class="reset">Restart</button>
+        </div>
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #ff5050;
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+#currentPlayer {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #ff5050;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3em 0;
+}
+
+#currentPlayer.active {
+    background-color: green;
+}
+
+.gameBoard {
+    height: 400px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.gameBoard .block {
+    height: 110px;
+    width: 110px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: #191919;
+}
+
+@media (max-width: 420px) {
+    .gameBoard .block {height: 90px; width: 90px;}
+}
+
+@media (max-width: 370px) {
+    .gameBoard {height: 300px;}
+    .gameBoard .block {height: 70px; width: 70px;}
+}
+
+.gameBoard .block.occupied {
+    box-shadow: 0 0 0 1px #ccc;
+    background-color: #fff;
+    cursor: default;
+}
+
+.gameBoard .block.playerX {
+    color: green;
+}
+
+.gameBoard .block.player0 {
+    color: #ff5050;
+}
+
+
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .55);
+    display: none;
+    z-index: 9;
+}
+
+.result-popup {
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    transform: scale(0);
+    box-shadow: 0 0 10px #eee;
+    transition: .3s ease-in-out;
+    transition-delay: .1s;
+}
+
+.result-popup h2 {
+    font-size: 40px;
+}
+
+.result-popup button {
+    padding: 14px 25px;
+    background: #ff5050;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-overlay.open {
+    display: flex;
+}
+
+.popup-overlay.open .result-popup {
+    transform: scale(1);
+}
