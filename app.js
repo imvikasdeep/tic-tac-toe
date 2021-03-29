@@ -2,6 +2,19 @@ $(document).ready(function($){
 
     $('.reset').on('click', function(){
         location.reload();
+        $('#switch-theme').prop('checked', false);
+    });
+
+    // Toggle theme 
+
+    $('#switch-theme').on('change', function(){
+        if($(this).prop('checked')) {
+            $('html').attr('data-theme', 'dark');
+            $('.switch-theme h4').text('Light Mode');
+        } else {
+            $('html').attr('data-theme', 'light');
+            $('.switch-theme h4').text('Dark Mode');
+        }
     })
 
     let currentPlayer = $('#currentPlayer');
