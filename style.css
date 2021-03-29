@@ -77,15 +77,6 @@ h1 {
     color: #191919;
 }
 
-@media (max-width: 420px) {
-    .gameBoard .block {height: 90px; width: 90px;}
-}
-
-@media (max-width: 370px) {
-    .gameBoard {height: 300px;}
-    .gameBoard .block {height: 70px; width: 70px;}
-}
-
 .gameBoard .block.occupied {
     box-shadow: 0 0 0 2px #ccc;
     background-color: var(--bg);
@@ -162,6 +153,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,8 +175,17 @@ h1 {
     transition-delay: .1s;
 }
 
+.result-popup h3 {
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Permanent Marker';
+    color: green;
+}
+
 .result-popup h2 {
     font-size: 40px;
+    margin-top: .5em;
+    line-height: 1.4;
 }
 
 .result-popup button {
@@ -204,4 +205,16 @@ h1 {
 
 .popup-overlay.open .result-popup {
     transform: scale(1);
+}
+
+
+
+@media (max-width: 420px) {
+    .gameBoard .block {height: 90px; width: 90px;}
+    .result-popup h2 {font-size: 30px;}
+}
+
+@media (max-width: 370px) {
+    .gameBoard {height: 300px;}
+    .gameBoard .block {height: 70px; width: 70px;}
 }
