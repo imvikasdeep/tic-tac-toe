@@ -27,7 +27,7 @@ $(document).ready(function($){
             var currentBlock = $(this);
             onClickResult(currentBlock);
 
-            // winning logic
+            // winning Senario
 
             if(blockArr[0].innerText !== '' && blockArr[0].innerText === blockArr[1].innerText && blockArr[1].innerText === blockArr[2].innerText) {
 
@@ -61,27 +61,38 @@ $(document).ready(function($){
 
                 winning(blockArr[2].innerText);
 
+            } else if( $('.occupied').length === 9 ) {
+
+                winning('Match Drawn');
+
             }
 
 
         })
     })
 
-    function winning(player) {
+    function winning(result) {
         setTimeout(function(){ 
             $('body').css('overflow','hidden');
-            $('#popup').find('h2').text('Player ' + player +  ' Won');
+            if(result.length == 1) {
+                $('#popup').find('h2').text('Player ' + result +  ' Won');
+            } else {            
+                $('#popup').find('h2').text(result);
+            }
             $('#popup').addClass('open');
 
         }, 300);
     }
 
     function onClickResult(currentBlock) {
+
         const blockIndex = currentBlock.index();
         
         console.log(blockIndex);
         if(currentBlock.hasClass('occupied')) {
+            
             // DO nothing
+
         } else {
              
             if(currentPlayer.text() === 'Player X') {
